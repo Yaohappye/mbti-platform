@@ -61,11 +61,18 @@ function patchOpenNextWindowsSymlinks() {
 
 patchOpenNextWindowsSymlinks();
 
-const pnpm = process.platform === "win32" ? "pnpm.cmd" : "pnpm";
-const build = spawnSync(pnpm, ["build:cloudflare"], {
+const openNextCli = resolve(
+  projectRoot,
+  "node_modules",
+  "@opennextjs",
+  "cloudflare",
+  "dist",
+  "cli",
+  "index.js",
+);
+const build = spawnSync(process.execPath, [openNextCli, "build"], {
   cwd: projectRoot,
   env: process.env,
-  shell: process.platform === "win32",
   stdio: "inherit",
 });
 

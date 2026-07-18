@@ -3,17 +3,15 @@ import { spawnSync } from "node:child_process";
 import { resolve } from "node:path";
 
 const projectRoot = resolve(process.env.COZE_WORKSPACE_PATH || process.cwd());
-const pnpm = process.platform === "win32" ? "pnpm.cmd" : "pnpm";
 
-function run(args) {
-  const result = spawnSync(pnpm, args, {
+function run(command, args) {
+  const result = spawnSync(command, args, {
     cwd: projectRoot,
     env: {
       ...process.env,
       NODE_ENV: "production",
       NEXT_TELEMETRY_DISABLED: "1",
     },
-    shell: process.platform === "win32",
     stdio: "inherit",
   });
 
@@ -27,7 +25,19 @@ if (
   !existsSync(resolve(projectRoot, "node_modules")) ||
   !existsSync(resolve(projectRoot, "node_modules", ".modules.yaml"))
 ) {
-  run(["install", "--frozen-lockfile", "--prefer-offline"]);
+  const packageManagerCli = process.env.npm_execpath;
+  if (!packageManagerCli) {
+    throw new Error("Install project dependencies before building");
+  }
+  run(process.execPath, [
+    packageManagerCli,
+    "install",
+    "--frozen-lockfile",
+    "--prefer-offline",
+  ]);
 }
 
-run(["next", "build"]);
+run(process.execPath, [
+  resolve(projectRoot, "node_modules", "next", "dist", "bin", "next"),
+  "build",
+]);

@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "node ./scripts/build.mjs",
+    "build": "node ./scripts/build-sites.mjs",
     "build:cloudflare": "opennextjs-cloudflare build",
+    "build:next": "node ./scripts/build.mjs",
     "build:sites": "node ./scripts/build-sites.mjs",
     "dev": "bash ./scripts/dev.sh",
     "preinstall": "npx only-allow pnpm",
