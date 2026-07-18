@@ -1,0 +1,188 @@
+{
+  "title": "MBTI性格診断",
+  "subtitle": "ユングの心理タイプ理論に基づいて、真の自分を探索する",
+  "startTest": "診断を開始",
+  "switchLanguage": "言語を変更",
+  "home": {
+    "hero": {
+      "badge": "ユングの心理タイプ理論に基づく",
+      "title": "あなたの",
+      "titleHighlight": "性格タイプを探索",
+      "subtitle": "MBTI性格診断は、真の自分を理解し、強みと成長の方向を発見するのに役立ちます",
+      "startButton": "診断を開始",
+      "learnMore": "詳細を見る"
+    },
+    "stats": {
+      "users": "ユーザー",
+      "accuracy": "正確性",
+      "types": "タイプ"
+    },
+    "versions": {
+      "title": "診断バージョンを選択",
+      "subtitle": "時間とニーズに応じて適切なバージョンを選択してください",
+      "questions": "{count}問",
+      "basic": {
+        "name": "ベーシック",
+        "description": "基本的な性格タイプを素早く理解する",
+        "duration": "約10分",
+        "features": [
+          "基本的な性格分析",
+          "4次元の傾向解釈",
+          "初心者に最適"
+        ]
+      },
+      "professional": {
+        "name": "プロフェッショナル",
+        "description": "性格特性と認知パターンを深く分析する",
+        "duration": "約15分",
+        "popular": "最も人気",
+        "features": [
+          "詳細な性格分析レポート",
+          "認知機能の深い解釈",
+          "キャリア発展アドバイス"
+        ]
+      },
+      "complete": {
+        "name": "コンプリート",
+        "description": "すべての次元を網羅した包括的な分析レポート",
+        "duration": "約30分",
+        "features": [
+          "最も包括的な分析次元",
+          "人間関係の深い解釈",
+          "個人成長パスの計画"
+        ]
+      }
+    },
+    "features": {
+      "title": "選ばれる理由",
+      "scientific": {
+        "title": "科学的理論",
+        "description": "ユングの心理タイプ理論に基づき、数十年にわたって検証されています"
+      },
+      "accurate": {
+        "title": "正確な分析",
+        "description": "多次元の深い分析により、性格特性を包括的に示します"
+      },
+      "personalized": {
+        "title": "パーソナライズドレポート",
+        "description": "あなたのユニークな性格タイプに合わせた専属レポートを生成します"
+      }
+    },
+    "personalities": {
+      "title": "16の性格タイプ",
+      "subtitle": "それぞれの性格タイプのユニークな特徴を知る"
+    },
+    "footer": {
+      "basedOn": "ユングの心理タイプ理論に基づく",
+      "languages": "{count}言語"
+    }
+  },
+  "test": {
+    "loading": "質問を読み込み中...",
+    "question": "質問",
+    "of": "/",
+    "answered": "回答済み",
+    "options": {
+      "strongAgree": "強く同意する",
+      "agree": "同意する",
+      "neutral": "どちらともいえない/わからない",
+      "disagree": "同意しない",
+      "strongDisagree": "全く同意しない"
+    },
+    "tips": {
+      "content": "最初の直感に基づいて答えてください。正解や不正解はありません。"
+    },
+    "navigation": {
+      "previous": "前へ",
+      "next": "次へ",
+      "submit": "提出",
+      "submitting": "送信中..."
+    },
+    "error": {
+      "title": "エラー",
+      "noSession": "セッション識別子がありません",
+      "loadFailed": "質問の読み込みに失敗しました",
+      "network": "ネットワークエラー、もう一度お試しください",
+      "submitFailed": "回答の送信に失敗しました。もう一度お試しください"
+    },
+    "backHome": "ホームに戻る",
+    "warning": {
+      "unanswered": "未回答の質問があります。質問 {index} に自動的に移動しました。"
+    },
+    "navigator": {
+      "title": "問題ナビゲーター",
+      "quickJump": "クイックジャンプ",
+      "current": "現在",
+      "answered": "回答済",
+      "unanswered": "未回答",
+      "unansweredCount": "あと {count} 問残っています",
+      "jumpToFirstUnanswered": "最初の未回答へ移動"
+    },
+    "password": {
+      "title": "アクセスパスワードを入力",
+      "subtitle": "有料ユーザー専用",
+      "description": "5桁のアクセスパスワードを入力してください",
+      "submit": "確認",
+      "verifying": "確認中...",
+      "verified": "確認済み",
+      "success": "認証成功",
+      "invalid": "パスワードが違います、もう一度お試しください",
+      "incomplete": "5桁すべて入力してください",
+      "error": "認証に失敗しました、もう一度お試しください",
+      "help": "パスワードをお持ちでない場合は、管理者にお問い合わせください"
+    }
+  },
+  "error": {
+    "createSession": "テストセッションの作成に失敗しました。もう一度お試しください"
+  },
+  "result": {
+    "title": "結果",
+    "yourType": "あなたの性格タイプは",
+    "typeDescription": "Type Description",
+    "detailedAnalysis": "Detailed Analysis",
+    "coreTraits": "Core Traits",
+    "cognitive": {
+      "title": "認知機能"
+    },
+    "strengths": {
+      "title": "強み",
+      "summary": "強みの概要"
+    },
+    "weaknesses": {
+      "title": "弱み",
+      "impact": "潜在的な影響"
+    },
+    "relationships": {
+      "title": "人間関係",
+      "romance": "恋愛関係",
+      "friendship": "友情",
+      "parenting": "親子関係",
+      "characteristics": "関係の特徴"
+    },
+    "career": {
+      "title": "キャリア",
+      "suitable": "適した職業",
+      "workStyle": "仕事のスタイル",
+      "workEnvironment": "理想的な職場環境"
+    },
+    "growth": {
+      "title": "成長アドバイス",
+      "opportunities": "成長の機会",
+      "actionSteps": "行動ステップ",
+      "detailedAdvice": "詳細なアドバイス"
+    },
+    "famous": {
+      "title": "有名人"
+    },
+    "actions": {
+      "download": "レポートをダウンロード",
+      "retake": "テストを再受験",
+      "share": "結果をシェア"
+    },
+    "share": {
+      "title": "結果をシェアする",
+      "copy": "リンクをコピー",
+      "copied": "リンクをコピーしました"
+    }
+  }
+}

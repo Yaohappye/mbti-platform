@@ -1,0 +1,304 @@
+{
+  "title": "MBTI人格测试",
+  "subtitle": "基于荣格心理类型理论，探索真实的你",
+  "startTest": "开始测试",
+  "switchLanguage": "切换语言",
+  "home": {
+    "hero": {
+      "badge": "基于荣格心理类型理论",
+      "title": "探索你的",
+      "titleHighlight": "人格类型",
+      "subtitle": "MBTI人格测试帮助你了解真实的自己，发现个人优势与发展方向",
+      "startButton": "开始测试",
+      "learnMore": "了解更多"
+    },
+    "stats": {
+      "users": "用户",
+      "accuracy": "准确度",
+      "types": "人格类型"
+    },
+    "versions": {
+      "title": "选择测试版本",
+      "subtitle": "根据你的时间和需求选择合适的测试版本",
+      "questions": "{count}题",
+      "basic": {
+        "name": "基础版",
+        "description": "快速了解你的基本人格类型",
+        "duration": "约10分钟",
+        "features": [
+          "基础人格类型分析",
+          "四维度倾向解读",
+          "适合初学者入门"
+        ]
+      },
+      "professional": {
+        "name": "专业版",
+        "description": "深度分析你的性格特点和认知模式",
+        "duration": "约15分钟",
+        "popular": "最受欢迎",
+        "features": [
+          "详细人格分析报告",
+          "认知功能深度解读",
+          "职业发展建议"
+        ]
+      },
+      "complete": {
+        "name": "完整版",
+        "description": "全面完整的分析报告，涵盖所有维度",
+        "duration": "约30分钟",
+        "features": [
+          "最全面的分析维度",
+          "人际关系深度解析",
+          "个人成长路径规划"
+        ]
+      }
+    },
+    "features": {
+      "title": "为什么选择我们",
+      "scientific": {
+        "title": "科学理论",
+        "description": "基于荣格心理类型理论，经过数十年验证"
+      },
+      "accurate": {
+        "title": "精准分析",
+        "description": "多维度深度分析，全面展现人格特质"
+      },
+      "personalized": {
+        "title": "个性化报告",
+        "description": "针对你的独特人格类型生成专属报告"
+      }
+    },
+    "personalities": {
+      "title": "16种人格类型",
+      "subtitle": "了解每一种人格类型的独特之处"
+    },
+    "footer": {
+      "basedOn": "基于荣格心理类型理论",
+      "languages": "{count}种语言"
+    }
+  },
+  "analysts": {
+    "title": "分析家",
+    "subtitle": "理性与逻辑",
+    "description": "善于分析、追求知识、独立思考",
+    "INTJ": {
+      "name": "INTJ",
+      "title": "建筑师",
+      "subtitle": "富有想象力的战略思想家",
+      "description": "富有想象力和战略性的思想家，一切皆在计划之中"
+    },
+    "INTP": {
+      "name": "INTP",
+      "title": "逻辑学家",
+      "subtitle": "创新的发明家",
+      "description": "具有创造力的发明家，对知识有止境的渴望"
+    },
+    "ENTJ": {
+      "name": "ENTJ",
+      "title": "指挥官",
+      "subtitle": "大胆的领导者",
+      "description": "大胆、富有想象力且意志坚强的领导者"
+    },
+    "ENTP": {
+      "name": "ENTP",
+      "title": "辩论家",
+      "subtitle": "聪明好奇的思想者",
+      "description": "聪明好奇的思想者，无法抗拒智力挑战"
+    }
+  },
+  "diplomats": {
+    "title": "外交家",
+    "subtitle": "理想与共鸣",
+    "description": "富有同理心、追求和谐、关注成长",
+    "INFJ": {
+      "name": "INFJ",
+      "title": "提倡者",
+      "subtitle": "安静的理想主义者",
+      "description": "安静而神秘，同时鼓舞人心且不知疲倦的理想主义者"
+    },
+    "INFP": {
+      "name": "INFP",
+      "title": "调停者",
+      "subtitle": "诗意的利他者",
+      "description": "善良、慷慨的利他主义者，总是热情地为正当理由提供帮助"
+    },
+    "ENFJ": {
+      "name": "ENFJ",
+      "title": "主人公",
+      "subtitle": "魅力四射的激励者",
+      "description": "富有魅力、鼓舞人心的领导者，能够吸引听众"
+    },
+    "ENFP": {
+      "name": "ENFP",
+      "title": "竞选者",
+      "subtitle": "热情自由的灵魂",
+      "description": "热情、有创造力爱社交的自由自在的人，总能找到理由微笑"
+    }
+  },
+  "sentinels": {
+    "title": "守护者",
+    "subtitle": "秩序与责任",
+    "description": "务实可靠、注重细节、坚守传统",
+    "ISTJ": {
+      "name": "ISTJ",
+      "title": "物流师",
+      "subtitle": "务实可靠的组织者",
+      "description": "务实和注重事实的个人，可靠性不容怀疑"
+    },
+    "ISFJ": {
+      "name": "ISFJ",
+      "title": "守卫者",
+      "subtitle": "专注温暖的保护者",
+      "description": "非常专注和热心的保护者，时刻准备着保护所爱之人"
+    },
+    "ESTJ": {
+      "name": "ESTJ",
+      "title": "总经理",
+      "subtitle": "高效的管理者",
+      "description": "出色的管理者，在管理事情或人的方面无与伦比"
+    },
+    "ESFJ": {
+      "name": "ESFJ",
+      "title": "执政官",
+      "subtitle": "热心的合作者",
+      "description": "极有同情心，爱社交受欢迎的人，总是热心提供帮助"
+    }
+  },
+  "explorers": {
+    "title": "探险家",
+    "subtitle": "体验与创造",
+    "description": "灵活多变、活在当下、勇于尝试",
+    "ISTP": {
+      "name": "ISTP",
+      "title": "鉴赏家",
+      "subtitle": "冷静的实验者",
+      "description": "大胆而实际的实验家，擅长使用各种工具"
+    },
+    "ISFP": {
+      "name": "ISFP",
+      "title": "探险家",
+      "subtitle": "灵活的艺术家",
+      "description": "灵活而有魅力的艺术家，时刻准备着探索和体验新鲜事物"
+    },
+    "ESTP": {
+      "name": "ESTP",
+      "title": "企业家",
+      "subtitle": "活力四射的实干家",
+      "description": "聪明、精力充沛善于感知的人，真心享受生活在边缘"
+    },
+    "ESFP": {
+      "name": "ESFP",
+      "title": "表演者",
+      "subtitle": "自发的表演者",
+      "description": "自发的、精力充沛的娱乐者，生活对他们而言永远不会无聊"
+    }
+  },
+  "test": {
+    "loading": "正在加载题目...",
+    "question": "题目",
+    "of": "/",
+    "answered": "已回答",
+    "options": {
+      "strongAgree": "非常同意",
+      "agree": "比较同意",
+      "neutral": "中立/不确定",
+      "disagree": "比较不同意",
+      "strongDisagree": "非常不同意"
+    },
+    "tips": {
+      "content": "请根据您的第一反应选择答案，没有对错之分"
+    },
+    "navigation": {
+      "previous": "上一题",
+      "next": "下一题",
+      "submit": "提交",
+      "submitting": "提交中..."
+    },
+    "error": {
+      "title": "出错了",
+      "noSession": "缺少会话标识",
+      "loadFailed": "加载题目失败",
+      "network": "网络错误，请重试",
+      "submitFailed": "提交答案失败，请重试"
+    },
+    "backHome": "返回首页",
+    "warning": {
+      "unanswered": "您还有未回答的题目，已自动跳转到第 {index} 题"
+    },
+    "navigator": {
+      "title": "题目导航",
+      "quickJump": "快速跳转",
+      "current": "当前",
+      "answered": "已答",
+      "unanswered": "未答",
+      "unansweredCount": "还有 {count} 题未回答",
+      "jumpToFirstUnanswered": "跳转到第一题未答题"
+    },
+    "password": {
+      "title": "输入访问密码",
+      "subtitle": "付费用户专享",
+      "description": "请输入您的5位数字访问密码",
+      "submit": "确认",
+      "verifying": "验证中...",
+      "verified": "验证成功",
+      "success": "验证成功",
+      "invalid": "密码错误，请重试",
+      "incomplete": "请输入完整5位密码",
+      "error": "验证失败，请重试",
+      "help": "没有密码？请联系管理员购买"
+    }
+  },
+  "result": {
+    "title": "测试结果",
+    "yourType": "你的人格类型是",
+    "typeDescription": "类型描述",
+    "detailedAnalysis": "详细分析",
+    "coreTraits": "核心特质",
+    "cognitive": {
+      "title": "认知功能"
+    },
+    "strengths": {
+      "title": "优势特点",
+      "summary": "优势总结"
+    },
+    "weaknesses": {
+      "title": "潜在弱点",
+      "impact": "可能影响"
+    },
+    "relationships": {
+      "title": "人际关系",
+      "romance": "恋爱关系",
+      "friendship": "友谊关系",
+      "parenting": "亲子关系",
+      "characteristics": "关系特征"
+    },
+    "career": {
+      "title": "职业发展",
+      "suitable": "适合的职业",
+      "workStyle": "工作风格",
+      "workEnvironment": "理想工作环境"
+    },
+    "growth": {
+      "title": "成长建议",
+      "opportunities": "成长机会",
+      "actionSteps": "行动步骤",
+      "detailedAdvice": "详细建议"
+    },
+    "famous": {
+      "title": "著名人物"
+    },
+    "actions": {
+      "download": "下载报告",
+      "retake": "重新测试",
+      "share": "分享结果"
+    },
+    "share": {
+      "title": "分享你的结果",
+      "copy": "复制链接",
+      "copied": "链接已复制到剪贴板"
+    }
+  },
+  "error": {
+    "createSession": "创建测试会话失败，请重试"
+  }
+}

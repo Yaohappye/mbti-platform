@@ -1,0 +1,188 @@
+{
+  "title": "MBTI 성격 테스트",
+  "subtitle": "융의 심리 유형 이론을 바탕으로 진정한 자아를 탐색하세요",
+  "startTest": "테스트 시작",
+  "switchLanguage": "언어 변경",
+  "home": {
+    "hero": {
+      "badge": "융의 심리 유형 이론 기반",
+      "title": "당신의",
+      "titleHighlight": "성격 유형을 발견하세요",
+      "subtitle": "MBTI 성격 테스트는 진정한 자아를 이해하고 강점과 성장 방향을 발견하는 데 도움을 줍니다",
+      "startButton": "테스트 시작",
+      "learnMore": "더 알아보기"
+    },
+    "stats": {
+      "users": "사용자",
+      "accuracy": "정확도",
+      "types": "유형"
+    },
+    "versions": {
+      "title": "테스트 버전 선택",
+      "subtitle": "시간과 필요에 따라 적합한 버전을 선택하세요",
+      "questions": "{count}문항",
+      "basic": {
+        "name": "기본",
+        "description": "기본 성격 유형을 빠르게 이해하세요",
+        "duration": "약 10분",
+        "features": [
+          "기본 성격 분석",
+          "4가지 성향 해석",
+          "입문자에게 완벽"
+        ]
+      },
+      "professional": {
+        "name": "전문가",
+        "description": "성격 특성과 인지 패턴을 심층 분석하세요",
+        "duration": "약 15분",
+        "popular": "가장 인기",
+        "features": [
+          "상세 성격 분석 보고서",
+          "인지 기능 심층 해석",
+          "직업 발전 조언"
+        ]
+      },
+      "complete": {
+        "name": "완전",
+        "description": "모든 차원을 포괄하는 종합 분석 보고서",
+        "duration": "약 30분",
+        "features": [
+          "가장 포괄적인 분석 차원",
+          "대인관계 심층 해석",
+          "개인 성장 경로 계획"
+        ]
+      }
+    },
+    "features": {
+      "title": "선택하는 이유",
+      "scientific": {
+        "title": "과학적 이론",
+        "description": "융의 심리 유형 이론을 기반으로 수십 년간 검증되었습니다"
+      },
+      "accurate": {
+        "title": "정확한 분석",
+        "description": "다차원 심층 분석으로 성격 특성을 종합적으로 보여줍니다"
+      },
+      "personalized": {
+        "title": "맞춤형 보고서",
+        "description": "당신의 고유한 성격 유형에 맞춘 전용 보고서를 생성합니다"
+      }
+    },
+    "personalities": {
+      "title": "16가지 성격 유형",
+      "subtitle": "각 성격 유형의 독특한 특징을 알아보세요"
+    },
+    "footer": {
+      "basedOn": "융의 심리 유형 이론 기반",
+      "languages": "{count}개 언어"
+    }
+  },
+  "test": {
+    "loading": "질문을 불러오는 중...",
+    "question": "질문",
+    "of": "/",
+    "answered": "답변 완료",
+    "options": {
+      "strongAgree": "매우 동의",
+      "agree": "동의",
+      "neutral": "중립/잘 모르겠음",
+      "disagree": "비동의",
+      "strongDisagree": "매우 비동의"
+    },
+    "tips": {
+      "content": "첫 번째 직감에 따라 답변하세요. 정답이나 오답은 없습니다."
+    },
+    "navigation": {
+      "previous": "이전",
+      "next": "다음",
+      "submit": "제출",
+      "submitting": "제출 중..."
+    },
+    "error": {
+      "title": "오류",
+      "noSession": "세션 식별자가 없습니다",
+      "loadFailed": "질문을 불러오는 데 실패했습니다",
+      "network": "네트워크 오류, 다시 시도해 주세요",
+      "submitFailed": "답변 제출에 실패했습니다. 다시 시도해 주세요"
+    },
+    "backHome": "홈으로 돌아가기",
+    "warning": {
+      "unanswered": "답변하지 않은 질문이 있습니다. 질문 {index}으로 자동 이동했습니다."
+    },
+    "navigator": {
+      "title": "문항 네비게이터",
+      "quickJump": "빠른 이동",
+      "current": "현재",
+      "answered": "답변완료",
+      "unanswered": "미답변",
+      "unansweredCount": "{count}문항 남음",
+      "jumpToFirstUnanswered": "첫 미답변으로 이동"
+    },
+    "password": {
+      "title": "액세스 비밀번호 입력",
+      "subtitle": "유료 사용자 전용",
+      "description": "5자리 액세스 비밀번호를 입력하세요",
+      "submit": "확인",
+      "verifying": "확인 중...",
+      "verified": "확인됨",
+      "success": "인증 성공",
+      "invalid": "비밀번호가 틀렸습니다, 다시 시도하세요",
+      "incomplete": "5자리를 모두 입력하세요",
+      "error": "인증 실패, 다시 시도하세요",
+      "help": "비밀번호가 없으신가요? 관리자에게 문의하세요"
+    }
+  },
+  "error": {
+    "createSession": "테스트 세션 생성에 실패했습니다. 다시 시도해 주세요"
+  },
+  "result": {
+    "title": "결과",
+    "yourType": "당신의 성격 유형은",
+    "typeDescription": "Type Description",
+    "detailedAnalysis": "Detailed Analysis",
+    "coreTraits": "Core Traits",
+    "cognitive": {
+      "title": "인지 기능"
+    },
+    "strengths": {
+      "title": "강점",
+      "summary": "장점 요약"
+    },
+    "weaknesses": {
+      "title": "약점",
+      "impact": "잠재적 영향"
+    },
+    "relationships": {
+      "title": "인간관계",
+      "romance": "연애 관계",
+      "friendship": "우정",
+      "parenting": "자녀 양육",
+      "characteristics": "관계 특성"
+    },
+    "career": {
+      "title": "직업",
+      "suitable": "적합한 직업",
+      "workStyle": "업무 스타일",
+      "workEnvironment": "이상적인 근무 환경"
+    },
+    "growth": {
+      "title": "성장 조언",
+      "opportunities": "성장 기회",
+      "actionSteps": "실행 단계",
+      "detailedAdvice": "상세한 조언"
+    },
+    "famous": {
+      "title": "유명인"
+    },
+    "actions": {
+      "download": "보고서 다운로드",
+      "retake": "테스트 다시 하기",
+      "share": "결과 공유"
+    },
+    "share": {
+      "title": "결과 공유하기",
+      "copy": "링크 복사",
+      "copied": "링크가 클립보드에 복사되었습니다"
+    }
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "title": "Teste de Personalidade MBTI",
+  "subtitle": "Explore seu verdadeiro eu baseado na teoria dos tipos psicológicos de Jung",
+  "startTest": "Iniciar Teste",
+  "switchLanguage": "Mudar Idioma",
+  "home": {
+    "hero": {
+      "badge": "Baseado na Teoria dos Tipos Psicológicos de Jung",
+      "title": "Descubra Seu",
+      "titleHighlight": "Tipo de Personalidade",
+      "subtitle": "O teste de personalidade MBTI ajuda você a entender seu verdadeiro eu e descobrir suas forças",
+      "startButton": "Iniciar Teste",
+      "learnMore": "Saiba Mais"
+    },
+    "stats": {
+      "users": "Usuários",
+      "accuracy": "Precisão",
+      "types": "Tipos"
+    },
+    "versions": {
+      "title": "Escolher Versão do Teste",
+      "subtitle": "Selecione a versão apropriada com base no seu tempo e necessidades",
+      "questions": "{count} Perguntas",
+      "basic": {
+        "name": "Básico",
+        "description": "Entenda rapidamente seu tipo de personalidade básico",
+        "duration": "~10 minutos",
+        "features": [
+          "Análise básica de personalidade",
+          "Interpretação das quatro dimensões",
+          "Perfeito para iniciantes"
+        ]
+      },
+      "professional": {
+        "name": "Profissional",
+        "description": "Análise profunda das suas características e padrões cognitivos",
+        "duration": "~15 minutos",
+        "popular": "Mais Popular",
+        "features": [
+          "Relatório detalhado de personalidade",
+          "Análise aprofundada das funções cognitivas",
+          "Conselhos de desenvolvimento profissional"
+        ]
+      },
+      "complete": {
+        "name": "Completo",
+        "description": "Análise abrangente cobrindo todas as dimensões",
+        "duration": "~30 minutos",
+        "features": [
+          "Dimensões mais abrangentes",
+          "Análise profunda de relacionamentos",
+          "Planejamento de crescimento pessoal"
+        ]
+      }
+    },
+    "features": {
+      "title": "Por Que Nos Escolher",
+      "scientific": {
+        "title": "Teoria Científica",
+        "description": "Baseado na teoria dos tipos psicológicos de Jung, verificado por décadas"
+      },
+      "accurate": {
+        "title": "Análise Precisa",
+        "description": "Análise multidimensional aprofundada mostrando traços de personalidade"
+      },
+      "personalized": {
+        "title": "Relatório Personalizado",
+        "description": "Gera relatórios exclusivos adaptados ao seu tipo de personalidade único"
+      }
+    },
+    "personalities": {
+      "title": "16 Tipos de Personalidade",
+      "subtitle": "Descubra a singularidade de cada tipo de personalidade"
+    },
+    "footer": {
+      "basedOn": "Baseado na Teoria dos Tipos Psicológicos de Jung",
+      "languages": "{count} Idiomas"
+    }
+  },
+  "test": {
+    "loading": "Carregando perguntas...",
+    "question": "Pergunta",
+    "of": "de",
+    "answered": "respondidas",
+    "options": {
+      "strongAgree": "Concordo Totalmente",
+      "agree": "Concordo",
+      "neutral": "Neutro/Inseguro",
+      "disagree": "Discordo",
+      "strongDisagree": "Discordo Totalmente"
+    },
+    "tips": {
+      "content": "Responda baseado no seu primeiro instinto. Não há respostas certas ou erradas."
+    },
+    "navigation": {
+      "previous": "Anterior",
+      "next": "Próxima",
+      "submit": "Enviar",
+      "submitting": "Enviando..."
+    },
+    "error": {
+      "title": "Erro",
+      "noSession": "Identificador de sessão ausente",
+      "loadFailed": "Falha ao carregar perguntas",
+      "network": "Erro de rede, tente novamente",
+      "submitFailed": "Falha ao enviar respostas, tente novamente"
+    },
+    "backHome": "Voltar ao início",
+    "warning": {
+      "unanswered": "Você tem perguntas não respondidas. Pulando para a pergunta {index} automaticamente."
+    },
+    "navigator": {
+      "title": "Navegador de Questões",
+      "quickJump": "Salto Rápido",
+      "current": "Atual",
+      "answered": "Respondida",
+      "unanswered": "Não Respondida",
+      "unansweredCount": "Faltam {count} questões",
+      "jumpToFirstUnanswered": "Ir para Primeira Não Respondida"
+    },
+    "password": {
+      "title": "Inserir Senha de Acesso",
+      "subtitle": "Apenas para Usuários Pagos",
+      "description": "Digite sua senha de acesso de 5 dígitos",
+      "submit": "Confirmar",
+      "verifying": "Verificando...",
+      "verified": "Verificado",
+      "success": "Verificação Bem-Sucedida",
+      "invalid": "Senha incorreta, tente novamente",
+      "incomplete": "Digite os 5 dígitos completos",
+      "error": "Falha na verificação, tente novamente",
+      "help": "Não tem senha? Entre em contato com o administrador"
+    }
+  },
+  "error": {
+    "createSession": "Falha ao criar sessão de teste, tente novamente"
+  },
+  "result": {
+    "title": "Resultados",
+    "yourType": "Seu tipo de personalidade é",
+    "typeDescription": "Type Description",
+    "detailedAnalysis": "Detailed Analysis",
+    "coreTraits": "Core Traits",
+    "cognitive": {
+      "title": "Funções Cognitivas"
+    },
+    "strengths": {
+      "title": "Pontos Fortes",
+      "summary": "Resumo de Pontos Fortes"
+    },
+    "weaknesses": {
+      "title": "Pontos Fracos",
+      "impact": "Impacto Potencial"
+    },
+    "relationships": {
+      "title": "Relacionamentos",
+      "romance": "Relacionamentos Românticos",
+      "friendship": "Amizades",
+      "parenting": "Paternidade",
+      "characteristics": "Características do Relacionamento"
+    },
+    "career": {
+      "title": "Carreira",
+      "suitable": "Carreiras Adequadas",
+      "workStyle": "Estilo de Trabalho",
+      "workEnvironment": "Ambiente de Trabalho Ideal"
+    },
+    "growth": {
+      "title": "Conselhos de Crescimento",
+      "opportunities": "Oportunidades de Crescimento",
+      "actionSteps": "Passos de Ação",
+      "detailedAdvice": "Conselhos Detalhados"
+    },
+    "famous": {
+      "title": "Pessoas Famosas"
+    },
+    "actions": {
+      "download": "Baixar Relatório",
+      "retake": "Refazer Teste",
+      "share": "Compartilhar Resultado"
+    },
+    "share": {
+      "title": "Compartilhe Seu Resultado",
+      "copy": "Copiar Link",
+      "copied": "Link copiado para a área de transferência"
+    }
+  }
+}

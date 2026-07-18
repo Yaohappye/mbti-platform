@@ -1,0 +1,304 @@
+{
+  "title": "MBTI Personality Test",
+  "subtitle": "Explore your true self based on Jung's theory of psychological types",
+  "startTest": "Start Test",
+  "switchLanguage": "Switch Language",
+  "home": {
+    "hero": {
+      "badge": "Based on Jung's Theory of Psychological Types",
+      "title": "Discover Your",
+      "titleHighlight": "Personality Type",
+      "subtitle": "The MBTI personality test helps you understand your true self and discover your strengths and direction for growth",
+      "startButton": "Start Test",
+      "learnMore": "Learn More"
+    },
+    "stats": {
+      "users": "Users",
+      "accuracy": "Accuracy",
+      "types": "Types"
+    },
+    "versions": {
+      "title": "Choose Test Version",
+      "subtitle": "Select the appropriate version based on your time and needs",
+      "questions": "{count} Questions",
+      "basic": {
+        "name": "Basic",
+        "description": "Quickly understand your basic personality type",
+        "duration": "~10 minutes",
+        "features": [
+          "Basic personality analysis",
+          "Four dimensions interpretation",
+          "Perfect for beginners"
+        ]
+      },
+      "professional": {
+        "name": "Professional",
+        "description": "In-depth analysis of your personality traits and cognitive patterns",
+        "duration": "~15 minutes",
+        "popular": "Most Popular",
+        "features": [
+          "Detailed personality report",
+          "Cognitive functions deep dive",
+          "Career development advice"
+        ]
+      },
+      "complete": {
+        "name": "Complete",
+        "description": "Comprehensive analysis covering all dimensions",
+        "duration": "~30 minutes",
+        "features": [
+          "Most comprehensive dimensions",
+          "Deep relationship analysis",
+          "Personal growth path planning"
+        ]
+      }
+    },
+    "features": {
+      "title": "Why Choose Us",
+      "scientific": {
+        "title": "Scientific Theory",
+        "description": "Based on Jung's theory of psychological types, verified over decades"
+      },
+      "accurate": {
+        "title": "Accurate Analysis",
+        "description": "Multi-dimensional in-depth analysis, comprehensively showing personality traits"
+      },
+      "personalized": {
+        "title": "Personalized Report",
+        "description": "Generate exclusive reports tailored to your unique personality type"
+      }
+    },
+    "personalities": {
+      "title": "16 Personality Types",
+      "subtitle": "Discover the uniqueness of each personality type"
+    },
+    "footer": {
+      "basedOn": "Based on Jung's Theory of Psychological Types",
+      "languages": "{count} Languages"
+    }
+  },
+  "analysts": {
+    "title": "Analysts",
+    "subtitle": "Rational & Logical",
+    "description": "Analytical, knowledge-seeking, independent thinkers",
+    "INTJ": {
+      "name": "INTJ",
+      "title": "Architect",
+      "subtitle": "Imaginative strategic thinkers",
+      "description": "Imaginative and strategic thinkers, with a plan for everything"
+    },
+    "INTP": {
+      "name": "INTP",
+      "title": "Logician",
+      "subtitle": "Innovative inventors",
+      "description": "Innovative inventors with an unquenchable thirst for knowledge"
+    },
+    "ENTJ": {
+      "name": "ENTJ",
+      "title": "Commander",
+      "subtitle": "Bold leaders",
+      "description": "Bold, imaginative and strong-willed leaders"
+    },
+    "ENTP": {
+      "name": "ENTP",
+      "title": "Debater",
+      "subtitle": "Smart curious thinkers",
+      "description": "Smart and curious thinkers who cannot resist an intellectual challenge"
+    }
+  },
+  "diplomats": {
+    "title": "Diplomats",
+    "subtitle": "Ideal & Empathetic",
+    "description": "Empathetic, harmony-seeking, growth-focused",
+    "INFJ": {
+      "name": "INFJ",
+      "title": "Advocate",
+      "subtitle": "Quiet idealists",
+      "description": "Quiet and mystical, yet inspiring and tireless idealists"
+    },
+    "INFP": {
+      "name": "INFP",
+      "title": "Mediator",
+      "subtitle": "Poetic altruists",
+      "description": "Kind and generous altruists, always eager to help a good cause"
+    },
+    "ENFJ": {
+      "name": "ENFJ",
+      "title": "Protagonist",
+      "subtitle": "Charismatic motivators",
+      "description": "Charismatic and inspiring leaders, able to mesmerize their listeners"
+    },
+    "ENFP": {
+      "name": "ENFP",
+      "title": "Campaigner",
+      "subtitle": "Enthusiastic free spirits",
+      "description": "Enthusiastic, creative and sociable free spirits, who can always find a reason to smile"
+    }
+  },
+  "sentinels": {
+    "title": "Sentinels",
+    "subtitle": "Order & Responsibility",
+    "description": "Practical, reliable, detail-oriented, tradition-honoring",
+    "ISTJ": {
+      "name": "ISTJ",
+      "title": "Logistician",
+      "subtitle": "Practical reliable organizers",
+      "description": "Practical and fact-minded individuals, whose reliability cannot be doubted"
+    },
+    "ISFJ": {
+      "name": "ISFJ",
+      "title": "Defender",
+      "subtitle": "Dedicated warm protectors",
+      "description": "Very dedicated and warm protectors, always ready to defend their loved ones"
+    },
+    "ESTJ": {
+      "name": "ESTJ",
+      "title": "Executive",
+      "subtitle": "Efficient managers",
+      "description": "Excellent administrators, unsurpassed at managing things or people"
+    },
+    "ESFJ": {
+      "name": "ESFJ",
+      "title": "Consul",
+      "subtitle": "Warm cooperative partners",
+      "description": "Extraordinarily caring, social and popular people, always eager to help"
+    }
+  },
+  "explorers": {
+    "title": "Explorers",
+    "subtitle": "Experience & Creation",
+    "description": "Flexible, living in the moment, willing to try",
+    "ISTP": {
+      "name": "ISTP",
+      "title": "Virtuoso",
+      "subtitle": "Calm experimenters",
+      "description": "Bold and practical experimenters, masters of all kinds of tools"
+    },
+    "ISFP": {
+      "name": "ISFP",
+      "title": "Adventurer",
+      "subtitle": "Flexible artists",
+      "description": "Flexible and charming artists, always ready to explore and experience something new"
+    },
+    "ESTP": {
+      "name": "ESTP",
+      "title": "Entrepreneur",
+      "subtitle": "Energetic doers",
+      "description": "Smart, energetic and very perceptive people, who truly enjoy living on the edge"
+    },
+    "ESFP": {
+      "name": "ESFP",
+      "title": "Entertainer",
+      "subtitle": "Spontaneous performers",
+      "description": "Spontaneous, energetic and enthusiastic entertainers – life is never boring around them"
+    }
+  },
+  "test": {
+    "loading": "Loading questions...",
+    "question": "Question",
+    "of": "of",
+    "answered": "answered",
+    "options": {
+      "strongAgree": "Strongly Agree",
+      "agree": "Agree",
+      "neutral": "Neutral/Unsure",
+      "disagree": "Disagree",
+      "strongDisagree": "Strongly Disagree"
+    },
+    "tips": {
+      "content": "Please answer based on your first instinct. There are no right or wrong answers."
+    },
+    "navigation": {
+      "previous": "Previous",
+      "next": "Next",
+      "submit": "Submit",
+      "submitting": "Submitting..."
+    },
+    "error": {
+      "title": "Error",
+      "noSession": "Missing session identifier",
+      "loadFailed": "Failed to load questions",
+      "network": "Network error, please retry",
+      "submitFailed": "Failed to submit answers, please retry"
+    },
+    "backHome": "Back to Home",
+    "warning": {
+      "unanswered": "You have unanswered questions. Jumped to question {index} automatically."
+    },
+    "navigator": {
+      "title": "Question Navigator",
+      "quickJump": "Quick Jump",
+      "current": "Current",
+      "answered": "Answered",
+      "unanswered": "Unanswered",
+      "unansweredCount": "{count} questions remaining",
+      "jumpToFirstUnanswered": "Jump to First Unanswered"
+    },
+    "password": {
+      "title": "Enter Access Password",
+      "subtitle": "Paid Users Only",
+      "description": "Please enter your 5-digit access password",
+      "submit": "Confirm",
+      "verifying": "Verifying...",
+      "verified": "Verified",
+      "success": "Verification Successful",
+      "invalid": "Invalid password, please try again",
+      "incomplete": "Please enter complete 5-digit password",
+      "error": "Verification failed, please retry",
+      "help": "No password? Contact admin to purchase"
+    }
+  },
+  "result": {
+    "title": "Test Results",
+    "yourType": "Your personality type is",
+    "typeDescription": "Type Description",
+    "detailedAnalysis": "Detailed Analysis",
+    "coreTraits": "Core Traits",
+    "cognitive": {
+      "title": "Cognitive Functions"
+    },
+    "strengths": {
+      "title": "Strengths",
+      "summary": "Strengths Summary"
+    },
+    "weaknesses": {
+      "title": "Potential Weaknesses",
+      "impact": "Potential Impact"
+    },
+    "relationships": {
+      "title": "Relationships",
+      "romance": "Romantic Relationships",
+      "friendship": "Friendships",
+      "parenting": "Parenting",
+      "characteristics": "Relationship Characteristics"
+    },
+    "career": {
+      "title": "Career Development",
+      "suitable": "Suitable Careers",
+      "workStyle": "Work Style",
+      "workEnvironment": "Ideal Work Environment"
+    },
+    "growth": {
+      "title": "Growth Advice",
+      "opportunities": "Growth Opportunities",
+      "actionSteps": "Action Steps",
+      "detailedAdvice": "Detailed Advice"
+    },
+    "famous": {
+      "title": "Famous People"
+    },
+    "actions": {
+      "download": "Download Report",
+      "retake": "Retake Test",
+      "share": "Share Result"
+    },
+    "share": {
+      "title": "Share Your Result",
+      "copy": "Copy Link",
+      "copied": "Link copied to clipboard"
+    }
+  },
+  "error": {
+    "createSession": "Failed to create test session, please try again"
+  }
+}

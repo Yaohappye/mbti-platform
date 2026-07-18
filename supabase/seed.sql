@@ -1,0 +1,3 @@
+-- Development-only seed data belongs here.
+-- Keep this file free of real customer, enterprise, activation-code, and
+-- production credential data.

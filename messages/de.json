@@ -1,0 +1,188 @@
+{
+  "title": "MBTI Persönlichkeitstest",
+  "subtitle": "Entdecke dein wahres Selbst basierend auf Jungs Theorie der psychologischen Typen",
+  "startTest": "Test Starten",
+  "switchLanguage": "Sprache Wechseln",
+  "home": {
+    "hero": {
+      "badge": "Basierend auf Jungs Theorie der psychologischen Typen",
+      "title": "Entdecke Deinen",
+      "titleHighlight": "Persönlichkeitstyp",
+      "subtitle": "Der MBTI-Persönlichkeitstest hilft dir, dein wahres Selbst zu verstehen und deine Stärken zu entdecken",
+      "startButton": "Test Starten",
+      "learnMore": "Mehr Erfahren"
+    },
+    "stats": {
+      "users": "Nutzer",
+      "accuracy": "Genauigkeit",
+      "types": "Typen"
+    },
+    "versions": {
+      "title": "Testversion Wählen",
+      "subtitle": "Wähle die passende Version basierend auf deiner Zeit und deinen Bedürfnissen",
+      "questions": "{count} Fragen",
+      "basic": {
+        "name": "Basis",
+        "description": "Verstehe schnell deinen grundlegenden Persönlichkeitstyp",
+        "duration": "~10 Minuten",
+        "features": [
+          "Grundlegende Persönlichkeitsanalyse",
+          "Interpretation der vier Dimensionen",
+          "Perfekt für Anfänger"
+        ]
+      },
+      "professional": {
+        "name": "Professionell",
+        "description": "Tiefgehende Analyse deiner Persönlichkeitsmerkmale und kognitiven Muster",
+        "duration": "~15 Minuten",
+        "popular": "Beliebteste",
+        "features": [
+          "Detaillierter Persönlichkeitsbericht",
+          "Tiefgehende Analyse kognitiver Funktionen",
+          "Berufliche Entwicklungsempfehlungen"
+        ]
+      },
+      "complete": {
+        "name": "Komplett",
+        "description": "Umfassende Analyse aller Dimensionen",
+        "duration": "~30 Minuten",
+        "features": [
+          "Umfassendste Dimensionen",
+          "Tiefgehende Beziehungsanalyse",
+          "Persönliche Wachstumsplanung"
+        ]
+      }
+    },
+    "features": {
+      "title": "Warum Uns Wählen",
+      "scientific": {
+        "title": "Wissenschaftliche Theorie",
+        "description": "Basierend auf Jungs Theorie der psychologischen Typen, über Jahrzehnte verifiziert"
+      },
+      "accurate": {
+        "title": "Genaue Analyse",
+        "description": "Mehrdimensionale Tiefenanalyse zeigt Persönlichkeitsmerkmale"
+      },
+      "personalized": {
+        "title": "Personalisierter Bericht",
+        "description": "Generiert exklusive Berichte für deinen einzigartigen Persönlichkeitstyp"
+      }
+    },
+    "personalities": {
+      "title": "16 Persönlichkeitstypen",
+      "subtitle": "Entdecke die Einzigartigkeit jedes Persönlichkeitstyps"
+    },
+    "footer": {
+      "basedOn": "Basierend auf Jungs Theorie der psychologischen Typen",
+      "languages": "{count} Sprachen"
+    }
+  },
+  "test": {
+    "loading": "Fragen werden geladen...",
+    "question": "Frage",
+    "of": "von",
+    "answered": "beantwortet",
+    "options": {
+      "strongAgree": "Stimme voll zu",
+      "agree": "Stimme zu",
+      "neutral": "Neutral/Unsicher",
+      "disagree": "Stimme nicht zu",
+      "strongDisagree": "Stimme überhaupt nicht zu"
+    },
+    "tips": {
+      "content": "Beantworte die Fragen basierend auf deinem ersten Instinkt. Es gibt keine richtigen oder falschen Antworten."
+    },
+    "navigation": {
+      "previous": "Zurück",
+      "next": "Weiter",
+      "submit": "Absenden",
+      "submitting": "Wird gesendet..."
+    },
+    "error": {
+      "title": "Fehler",
+      "noSession": "Sitzungskennung fehlt",
+      "loadFailed": "Fehler beim Laden der Fragen",
+      "network": "Netzwerkfehler, bitte versuche es erneut",
+      "submitFailed": "Fehler beim Senden der Antworten, bitte versuche es erneut"
+    },
+    "backHome": "Zurück zur Startseite",
+    "warning": {
+      "unanswered": "Sie haben unbeantwortete Fragen. Automatisch zur Frage {index} gesprungen."
+    },
+    "navigator": {
+      "title": "Fragen-Navigator",
+      "quickJump": "Schneller Sprung",
+      "current": "Aktuell",
+      "answered": "Beantwortet",
+      "unanswered": "Unbeantwortet",
+      "unansweredCount": "Noch {count} Fragen übrig",
+      "jumpToFirstUnanswered": "Zur Ersten Unbeantworteten"
+    },
+    "password": {
+      "title": "Zugangspasswort Eingeben",
+      "subtitle": "Nur für Bezahlte Benutzer",
+      "description": "Bitte geben Sie Ihr 5-stelliges Zugangspasswort ein",
+      "submit": "Bestätigen",
+      "verifying": "Überprüfung...",
+      "verified": "Überprüft",
+      "success": "Überprüfung Erfolgreich",
+      "invalid": "Falsches Passwort, bitte erneut versuchen",
+      "incomplete": "Bitte geben Sie die vollständigen 5 Ziffern ein",
+      "error": "Überprüfung fehlgeschlagen, bitte erneut versuchen",
+      "help": "Kein Passwort? Kontaktieren Sie den Administrator"
+    }
+  },
+  "error": {
+    "createSession": "Fehler beim Erstellen der Testsitzung, bitte versuche es erneut"
+  },
+  "result": {
+    "title": "Ergebnisse",
+    "yourType": "Dein Persönlichkeitstyp ist",
+    "typeDescription": "Type Description",
+    "detailedAnalysis": "Detailed Analysis",
+    "coreTraits": "Core Traits",
+    "cognitive": {
+      "title": "Kognitive Funktionen"
+    },
+    "strengths": {
+      "title": "Stärken",
+      "summary": "Zusammenfassung der Stärken"
+    },
+    "weaknesses": {
+      "title": "Schwächen",
+      "impact": "Mögliche Auswirkungen"
+    },
+    "relationships": {
+      "title": "Beziehungen",
+      "romance": "Romantische Beziehungen",
+      "friendship": "Freundschaften",
+      "parenting": "Elternschaft",
+      "characteristics": "Beziehungsmerkmale"
+    },
+    "career": {
+      "title": "Karriere",
+      "suitable": "Geeignete Berufe",
+      "workStyle": "Arbeitsstil",
+      "workEnvironment": "Ideale Arbeitsumgebung"
+    },
+    "growth": {
+      "title": "Wachstumstipps",
+      "opportunities": "Wachstumschancen",
+      "actionSteps": "Handlungsschritte",
+      "detailedAdvice": "Detaillierte Ratschläge"
+    },
+    "famous": {
+      "title": "Berühmte Persönlichkeiten"
+    },
+    "actions": {
+      "download": "Bericht Herunterladen",
+      "retake": "Test Wiederholen",
+      "share": "Ergebnis Teilen"
+    },
+    "share": {
+      "title": "Teile Dein Ergebnis",
+      "copy": "Link Kopieren",
+      "copied": "Link in die Zwischenablage kopiert"
+    }
+  }
+}

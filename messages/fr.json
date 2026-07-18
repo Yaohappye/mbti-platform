@@ -1,0 +1,188 @@
+{
+  "title": "Test de Personnalité MBTI",
+  "subtitle": "Explorez votre vrai moi basé sur la théorie des types psychologiques de Jung",
+  "startTest": "Commencer le Test",
+  "switchLanguage": "Changer de Langue",
+  "home": {
+    "hero": {
+      "badge": "Basé sur la Théorie des Types Psychologiques de Jung",
+      "title": "Découvrez Votre",
+      "titleHighlight": "Type de Personnalité",
+      "subtitle": "Le test de personnalité MBTI vous aide à comprendre votre vrai moi et découvrir vos forces",
+      "startButton": "Commencer le Test",
+      "learnMore": "En Savoir Plus"
+    },
+    "stats": {
+      "users": "Utilisateurs",
+      "accuracy": "Précision",
+      "types": "Types"
+    },
+    "versions": {
+      "title": "Choisir la Version du Test",
+      "subtitle": "Sélectionnez la version appropriée selon votre temps et vos besoins",
+      "questions": "{count} Questions",
+      "basic": {
+        "name": "Basique",
+        "description": "Comprenez rapidement votre type de personnalité de base",
+        "duration": "~10 minutes",
+        "features": [
+          "Analyse de personnalité basique",
+          "Interprétation des quatre dimensions",
+          "Parfait pour les débutants"
+        ]
+      },
+      "professional": {
+        "name": "Professionnel",
+        "description": "Analyse approfondie de vos traits et schémas cognitifs",
+        "duration": "~15 minutes",
+        "popular": "Plus Populaire",
+        "features": [
+          "Rapport de personnalité détaillé",
+          "Analyse approfondie des fonctions cognitives",
+          "Conseils de développement professionnel"
+        ]
+      },
+      "complete": {
+        "name": "Complet",
+        "description": "Analyse complète couvrant toutes les dimensions",
+        "duration": "~30 minutes",
+        "features": [
+          "Dimensions les plus complètes",
+          "Analyse approfondie des relations",
+          "Planification de croissance personnelle"
+        ]
+      }
+    },
+    "features": {
+      "title": "Pourquoi Nous Choisir",
+      "scientific": {
+        "title": "Théorie Scientifique",
+        "description": "Basé sur la théorie des types psychologiques de Jung, vérifié pendant des décennies"
+      },
+      "accurate": {
+        "title": "Analyse Précise",
+        "description": "Analyse multidimensionnelle approfondie montrant les traits de personnalité"
+      },
+      "personalized": {
+        "title": "Rapport Personnalisé",
+        "description": "Génère des rapports exclusifs adaptés à votre type de personnalité unique"
+      }
+    },
+    "personalities": {
+      "title": "16 Types de Personnalité",
+      "subtitle": "Découvrez l'unicité de chaque type de personnalité"
+    },
+    "footer": {
+      "basedOn": "Basé sur la Théorie des Types Psychologiques de Jung",
+      "languages": "{count} Langues"
+    }
+  },
+  "test": {
+    "loading": "Chargement des questions...",
+    "question": "Question",
+    "of": "sur",
+    "answered": "répondues",
+    "options": {
+      "strongAgree": "Tout à fait d'accord",
+      "agree": "D'accord",
+      "neutral": "Neutre/Indécis",
+      "disagree": "Pas d'accord",
+      "strongDisagree": "Pas du tout d'accord"
+    },
+    "tips": {
+      "content": "Répondez en vous basant sur votre première intuition. Il n'y a pas de bonnes ou mauvaises réponses."
+    },
+    "navigation": {
+      "previous": "Précédent",
+      "next": "Suivant",
+      "submit": "Soumettre",
+      "submitting": "Envoi en cours..."
+    },
+    "error": {
+      "title": "Erreur",
+      "noSession": "Identifiant de session manquant",
+      "loadFailed": "Échec du chargement des questions",
+      "network": "Erreur réseau, veuillez réessayer",
+      "submitFailed": "Échec de l'envoi des réponses, veuillez réessayer"
+    },
+    "backHome": "Retour à l'accueil",
+    "warning": {
+      "unanswered": "Vous avez des questions sans réponse. Saut à la question {index} automatiquement."
+    },
+    "navigator": {
+      "title": "Navigateur de Questions",
+      "quickJump": "Saut Rapide",
+      "current": "Actuelle",
+      "answered": "Répondue",
+      "unanswered": "Non Répondue",
+      "unansweredCount": "Il reste {count} questions",
+      "jumpToFirstUnanswered": "Aller à la Première Non Répondue"
+    },
+    "password": {
+      "title": "Entrer le Mot de Passe",
+      "subtitle": "Utilisateurs Payants Uniquement",
+      "description": "Veuillez entrer votre mot de passe d'accès à 5 chiffres",
+      "submit": "Confirmer",
+      "verifying": "Vérification...",
+      "verified": "Vérifié",
+      "success": "Vérification Réussie",
+      "invalid": "Mot de passe incorrect, réessayez",
+      "incomplete": "Veuillez entrer les 5 chiffres complets",
+      "error": "Échec de la vérification, réessayez",
+      "help": "Pas de mot de passe ? Contactez l'administrateur"
+    }
+  },
+  "error": {
+    "createSession": "Échec de la création de la session de test, veuillez réessayer"
+  },
+  "result": {
+    "title": "Résultats",
+    "yourType": "Votre type de personnalité est",
+    "typeDescription": "Type Description",
+    "detailedAnalysis": "Detailed Analysis",
+    "coreTraits": "Core Traits",
+    "cognitive": {
+      "title": "Fonctions Cognitives"
+    },
+    "strengths": {
+      "title": "Forces",
+      "summary": "Résumé des Forces"
+    },
+    "weaknesses": {
+      "title": "Faiblesses",
+      "impact": "Impact Potentiel"
+    },
+    "relationships": {
+      "title": "Relations",
+      "romance": "Relations Amoureuses",
+      "friendship": "Amitiés",
+      "parenting": "Parentalité",
+      "characteristics": "Caractéristiques de Relation"
+    },
+    "career": {
+      "title": "Carrière",
+      "suitable": "Carrières Adaptées",
+      "workStyle": "Style de Travail",
+      "workEnvironment": "Environnement de Travail Idéal"
+    },
+    "growth": {
+      "title": "Conseils de Croissance",
+      "opportunities": "Opportunités de Croissance",
+      "actionSteps": "Étapes d'Action",
+      "detailedAdvice": "Conseils Détaillés"
+    },
+    "famous": {
+      "title": "Personnalités Célèbres"
+    },
+    "actions": {
+      "download": "Télécharger le Rapport",
+      "retake": "Refaire le Test",
+      "share": "Partager"
+    },
+    "share": {
+      "title": "Partagez Votre Résultat",
+      "copy": "Copier le Lien",
+      "copied": "Lien copié dans le presse-papiers"
+    }
+  }
+}
