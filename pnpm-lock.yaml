@@ -98,12 +98,18 @@ importers:
       '@supabase/supabase-js':
         specifier: 2.95.3
         version: 2.95.3
+      '@swc/helpers':
+        specifier: 0.5.15
+        version: 0.5.15
       bcryptjs:
         specifier: ^3.0.3
         version: 3.0.3
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
+      client-only:
+        specifier: 0.0.1
+        version: 0.0.1
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -179,6 +185,9 @@ importers:
       sonner:
         specifier: ^2.0.7
         version: 2.0.7(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      styled-jsx:
+        specifier: 5.1.6
+        version: 5.1.6(@babel/core@7.28.6)(react@19.2.3)
       tailwind-merge:
         specifier: ^2.6.0
         version: 2.6.0
@@ -248,7 +257,7 @@ importers:
         specifier: latest
         version: 3.7.0(@cfworker/json-schema@4.1.1)(@types/node@20.19.30)(hono@4.11.7)(typescript@5.9.3)
       supabase:
-        specifier: ^2.109.1
+        specifier: 2.109.1
         version: 2.109.1
       tailwindcss:
         specifier: ^4
