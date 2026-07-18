@@ -88,10 +88,12 @@ const openNext = resolve(projectRoot, ".open-next");
 const dist = resolve(projectRoot, "dist");
 const server = resolve(dist, "server");
 const client = resolve(dist, "client");
+const hostingOutput = resolve(dist, ".openai");
 
 rmSync(dist, { recursive: true, force: true });
 mkdirSync(server, { recursive: true });
 mkdirSync(client, { recursive: true });
+mkdirSync(hostingOutput, { recursive: true });
 
 // Sites runs dist/server/index.js as the Worker entrypoint. Keep the rest of
 // the OpenNext server bundle beside it so generated relative imports remain
@@ -100,6 +102,10 @@ cpSync(openNext, server, { recursive: true });
 renameSync(resolve(server, "worker.js"), resolve(server, "index.js"));
 rmSync(resolve(server, "assets"), { recursive: true, force: true });
 cpSync(resolve(openNext, "assets"), client, { recursive: true });
+cpSync(
+  resolve(projectRoot, ".openai", "hosting.json"),
+  resolve(hostingOutput, "hosting.json"),
+);
 
 if (!existsSync(resolve(server, "index.js"))) {
   throw new Error("Sites Worker entrypoint was not created");
