@@ -98,10 +98,13 @@ mkdirSync(hostingOutput, { recursive: true });
 // Sites runs dist/server/index.js as the Worker entrypoint. Keep the rest of
 // the OpenNext server bundle beside it so generated relative imports remain
 // valid, and expose static files through Sites' client asset directory.
-cpSync(openNext, server, { recursive: true });
+cpSync(openNext, server, { recursive: true, dereference: true });
 renameSync(resolve(server, "worker.js"), resolve(server, "index.js"));
 rmSync(resolve(server, "assets"), { recursive: true, force: true });
-cpSync(resolve(openNext, "assets"), client, { recursive: true });
+cpSync(resolve(openNext, "assets"), client, {
+  recursive: true,
+  dereference: true,
+});
 cpSync(
   resolve(projectRoot, ".openai", "hosting.json"),
   resolve(hostingOutput, "hosting.json"),
