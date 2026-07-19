@@ -9,7 +9,7 @@ import {
   writeFileSync,
 } from "node:fs";
 import { spawnSync } from "node:child_process";
-import { resolve } from "node:path";
+import { extname, resolve } from "node:path";
 
 const projectRoot = resolve(process.env.COZE_WORKSPACE_PATH || process.cwd());
 
@@ -59,6 +59,27 @@ function patchOpenNextWindowsSymlinks() {
   writeFileSync(helperPath, source.replace(original, replacement));
 }
 
+function patchWorkerCommonJsCompatibility(directory) {
+  const requireShim =
+    'import { createRequire as __openNextCreateRequire } from "node:module";\n' +
+    "const require = __openNextCreateRequire(import.meta.url);\n";
+
+  for (const entry of readdirSync(directory, { withFileTypes: true })) {
+    const entryPath = resolve(directory, entry.name);
+    if (entry.isDirectory()) {
+      patchWorkerCommonJsCompatibility(entryPath);
+      continue;
+    }
+    if (extname(entry.name) !== ".mjs") continue;
+
+    const source = readFileSync(entryPath, "utf8");
+    if (!source.includes("require(") || source.includes("__openNextCreateRequire")) {
+      continue;
+    }
+    writeFileSync(entryPath, requireShim + source);
+  }
+}
+
 patchOpenNextWindowsSymlinks();
 
 const openNextCli = resolve(
@@ -101,6 +122,7 @@ mkdirSync(hostingOutput, { recursive: true });
 cpSync(openNext, server, { recursive: true, dereference: true });
 renameSync(resolve(server, "worker.js"), resolve(server, "index.js"));
 rmSync(resolve(server, "assets"), { recursive: true, force: true });
+patchWorkerCommonJsCompatibility(resolve(server, "server-functions"));
 cpSync(resolve(openNext, "assets"), client, {
   recursive: true,
   dereference: true,
