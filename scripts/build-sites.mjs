@@ -62,7 +62,7 @@ function patchOpenNextWindowsSymlinks() {
 function patchWorkerCommonJsCompatibility(directory) {
   const requireShim =
     'import { createRequire as __openNextCreateRequire } from "node:module";\n' +
-    "const require = __openNextCreateRequire(import.meta.url);\n";
+    'const require = __openNextCreateRequire("file:///worker.js");\n';
 
   for (const entry of readdirSync(directory, { withFileTypes: true })) {
     const entryPath = resolve(directory, entry.name);
