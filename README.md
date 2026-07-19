@@ -1,15 +1,15 @@
-# projects
+# MBTI 企业测评平台
 
 > 本项目采用“本地 PostgreSQL 测试库 + 云端 PostgreSQL 正式库 + GitHub 发布”的隔离方式。首次配置、Navicat 连接和上线步骤见 [DEPLOYMENT.md](./DEPLOYMENT.md)。
 
-这是一个基于 [Next.js 16](https://nextjs.org) + [shadcn/ui](https://ui.shadcn.com) 的全栈应用项目，由扣子编程 CLI 创建。
+这是一个基于 [Next.js 16](https://nextjs.org) + [shadcn/ui](https://ui.shadcn.com) 的 MBTI 人格测试与企业人才测评平台。
 
 ## 快速开始
 
 ### 启动开发服务器
 
 ```bash
-coze dev
+pnpm dev
 ```
 
 启动后，在浏览器中打开 [http://localhost:5000](http://localhost:5000) 查看应用。
@@ -19,13 +19,13 @@ coze dev
 ### 构建生产版本
 
 ```bash
-coze build
+pnpm build
 ```
 
 ### 启动生产服务器
 
 ```bash
-coze start
+pnpm start
 ```
 
 ## 项目结构

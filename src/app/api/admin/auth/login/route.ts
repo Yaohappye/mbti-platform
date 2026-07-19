@@ -97,29 +97,39 @@ export async function POST(request: NextRequest) {
       enterprise = { code: String(data.code), name: String(data.name) };
     }
 
+    const ipAddress = getRequestIp(request);
+    const userAgent = getRequestUserAgent(request);
     const session = await createAdminSession({
       adminType: role,
       adminId: String(account.id),
       enterpriseId,
-      ipAddress: getRequestIp(request),
-      userAgent: getRequestUserAgent(request),
+      ipAddress,
+      userAgent,
     });
 
-    await db.from("admin_operation_logs").insert({
-      admin_type: role,
-      admin_id: account.id,
-      enterprise_id: enterpriseId,
-      operation: "login",
-      target_type: "admin_session",
-      target_id: session.sessionId,
-      ip_address: getRequestIp(request),
-      user_agent: getRequestUserAgent(request),
-    });
+    const [logResult, lastLoginResult] = await Promise.all([
+      db.from("admin_operation_logs").insert({
+        admin_type: role,
+        admin_id: account.id,
+        enterprise_id: enterpriseId,
+        operation: "login",
+        target_type: "admin_session",
+        target_id: session.sessionId,
+        ip_address: ipAddress,
+        user_agent: userAgent,
+      }),
+      db
+        .from(role === "platform" ? "platform_admins" : "enterprise_admins")
+        .update({ last_login_at: new Date().toISOString() })
+        .eq("id", account.id),
+    ]);
 
-    await db
-      .from(role === "platform" ? "platform_admins" : "enterprise_admins")
-      .update({ last_login_at: new Date().toISOString() })
-      .eq("id", account.id);
+    if (logResult.error) {
+      throw new Error(`记录登录日志失败: ${logResult.error.message}`);
+    }
+    if (lastLoginResult.error) {
+      throw new Error(`更新登录时间失败: ${lastLoginResult.error.message}`);
+    }
 
     const response = NextResponse.json({
       code: 0,

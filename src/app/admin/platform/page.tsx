@@ -270,7 +270,6 @@ const [enterprisePage, setEnterprisePage] = useState(1);
   const [tenJumpError, setTenJumpError] = useState("");
 
   useEffect(() => {
-    void checkAuth();
     void fetchEnterprises();
   }, []);
 
@@ -278,14 +277,6 @@ const [enterprisePage, setEnterprisePage] = useState(1);
     if (activeTab === "personal") void loadActivationCodes();
     if (activeTab === "recharge") void loadRechargeCodes();
   }, [activeTab]);
-
-  const checkAuth = async () => {
-    const response = await fetch("/api/admin/auth/session");
-    const result = await response.json().catch(() => ({}));
-    if (!response.ok || result.data?.adminType !== "platform") {
-      router.push("/admin/login");
-    }
-  };
 
   const handleLogout = async () => {
     await fetch("/api/admin/auth/logout", { method: "POST" }).catch(() => null);
@@ -303,6 +294,11 @@ const [enterprisePage, setEnterprisePage] = useState(1);
       );
 
       const data = await res.json();
+
+      if (res.status === 401 || res.status === 403) {
+        router.replace("/admin/login");
+        return;
+      }
 
       if (data.code === 0) {
         const list = Array.isArray(data.data)

@@ -1,5 +1,6 @@
 ﻿"use client";
 
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -7,11 +8,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "sonner";
 
 export default function AdminLoginPage() {
+  const router = useRouter();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
   const handleLogin = async () => {
+    if (loading) return;
+
     if (!username.trim() || !password.trim()) {
       toast.error("请输入账号和密码");
       return;
@@ -46,8 +50,8 @@ export default function AdminLoginPage() {
         localStorage.removeItem("enterprise_id");
         localStorage.removeItem("enterprise_name");
 
-        toast.success("登录成功，正在跳转...");
-        window.location.href = "/admin/platform";
+        toast.success("登录成功");
+        router.replace("/admin/platform");
       } else {
         toast.error(data.message || "登录失败");
       }
@@ -75,7 +79,7 @@ export default function AdminLoginPage() {
               placeholder="请输入账号"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              autoComplete="off"
+              autoComplete="username"
             />
 
             <Input
@@ -83,7 +87,7 @@ export default function AdminLoginPage() {
               placeholder="请输入密码"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              autoComplete="new-password"
+              autoComplete="current-password"
               onKeyDown={(e) => {
                 if (e.key === "Enter") {
                   handleLogin();
