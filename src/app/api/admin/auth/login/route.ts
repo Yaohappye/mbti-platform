@@ -1,5 +1,5 @@
 import { compare } from "bcryptjs";
-import { NextRequest, NextResponse } from "next/server";
+import { after, NextRequest, NextResponse } from "next/server";
 import {
   createAdminSession,
   setAdminSessionCookies,
@@ -61,11 +61,7 @@ export async function POST(request: NextRequest) {
       throw new Error(`读取管理员账号失败: ${readError.message}`);
     }
 
-    if (
-      !account ||
-      account.status !== "active" ||
-      !(await compare(password, String(account.password_hash)))
-    ) {
+    if (!account || account.status !== "active") {
       return NextResponse.json(
         { code: 401, message: "账号或密码错误", data: null },
         { status: 401 },
@@ -78,12 +74,29 @@ export async function POST(request: NextRequest) {
         : null;
     let enterprise: { code: string; name: string } | null = null;
 
+    const passwordCheck = compare(password, String(account.password_hash));
+    const enterpriseCheck = enterpriseId
+      ? db
+          .from("enterprises")
+          .select("code,name,status")
+          .eq("id", enterpriseId)
+          .maybeSingle()
+      : Promise.resolve({ data: null, error: null });
+
+    const [passwordMatches, enterpriseResult] = await Promise.all([
+      passwordCheck,
+      enterpriseCheck,
+    ]);
+
+    if (!passwordMatches) {
+      return NextResponse.json(
+        { code: 401, message: "账号或密码错误", data: null },
+        { status: 401 },
+      );
+    }
+
     if (enterpriseId) {
-      const { data, error: enterpriseError } = await db
-        .from("enterprises")
-        .select("code,name,status")
-        .eq("id", enterpriseId)
-        .maybeSingle();
+      const { data, error: enterpriseError } = enterpriseResult;
 
       if (enterpriseError) {
         throw new Error(`读取企业失败: ${enterpriseError.message}`);
@@ -107,30 +120,6 @@ export async function POST(request: NextRequest) {
       userAgent,
     });
 
-    const [logResult, lastLoginResult] = await Promise.all([
-      db.from("admin_operation_logs").insert({
-        admin_type: role,
-        admin_id: account.id,
-        enterprise_id: enterpriseId,
-        operation: "login",
-        target_type: "admin_session",
-        target_id: session.sessionId,
-        ip_address: ipAddress,
-        user_agent: userAgent,
-      }),
-      db
-        .from(role === "platform" ? "platform_admins" : "enterprise_admins")
-        .update({ last_login_at: new Date().toISOString() })
-        .eq("id", account.id),
-    ]);
-
-    if (logResult.error) {
-      throw new Error(`记录登录日志失败: ${logResult.error.message}`);
-    }
-    if (lastLoginResult.error) {
-      throw new Error(`更新登录时间失败: ${lastLoginResult.error.message}`);
-    }
-
     const response = NextResponse.json({
       code: 0,
       message: "登录成功",
@@ -150,6 +139,36 @@ export async function POST(request: NextRequest) {
       adminType: role,
       adminId: String(account.id),
       enterpriseId,
+    });
+
+    response.headers.set("Cache-Control", "no-store");
+
+    // These writes are useful for auditing, but they are not required before
+    // the browser can enter the admin area. Finish them after sending login.
+    after(async () => {
+      const [logResult, lastLoginResult] = await Promise.all([
+        db.from("admin_operation_logs").insert({
+          admin_type: role,
+          admin_id: account.id,
+          enterprise_id: enterpriseId,
+          operation: "login",
+          target_type: "admin_session",
+          target_id: session.sessionId,
+          ip_address: ipAddress,
+          user_agent: userAgent,
+        }),
+        db
+          .from(role === "platform" ? "platform_admins" : "enterprise_admins")
+          .update({ last_login_at: new Date().toISOString() })
+          .eq("id", account.id),
+      ]);
+
+      if (logResult.error) {
+        console.error("Record login audit failed:", logResult.error.message);
+      }
+      if (lastLoginResult.error) {
+        console.error("Update last login failed:", lastLoginResult.error.message);
+      }
     });
 
     return response;

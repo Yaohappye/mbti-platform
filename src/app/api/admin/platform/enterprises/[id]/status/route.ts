@@ -12,6 +12,14 @@ export async function PATCH(request: NextRequest, context: { params: Promise<{ i
     const db = getDatabaseAdmin();
     const { error } = await db.from("enterprises").update({ status }).eq("id", id);
     if (error) throw new Error(error.message);
+    if (status === "disabled") {
+      const { error: revokeError } = await db
+        .from("admin_sessions")
+        .update({ revoked_at: new Date().toISOString() })
+        .eq("enterprise_id", id)
+        .is("revoked_at", null);
+      if (revokeError) throw new Error(revokeError.message);
+    }
     await db.from("admin_operation_logs").insert({ admin_type: "platform", admin_id: session.adminId, enterprise_id: id, operation: status === "disabled" ? "disable_enterprise" : "enable_enterprise", target_type: "enterprise", target_id: id });
     return NextResponse.json({ code: 0, message: status === "disabled" ? "企业已停用" : "企业已恢复", data: { status } });
   } catch (error) {

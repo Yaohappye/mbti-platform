@@ -168,7 +168,7 @@ const exportToExcel = (data: unknown[], filename: string) => {
 async function fetchWithTimeout(
   input: RequestInfo | URL,
   init: RequestInit = {},
-  timeoutMs = 8000
+  timeoutMs = 15000
 ) {
   const controller = new AbortController();
   const timer = window.setTimeout(() => controller.abort(), timeoutMs);
@@ -309,10 +309,16 @@ const [enterprisePage, setEnterprisePage] = useState(1);
 
         setEnterprises(list);
       } else {
-        setEnterprises([]);
+        throw new Error(data.message || "企业数据加载失败");
       }
-    } catch {
-      setEnterprises([]);
+    } catch (error) {
+      // Keep the last successful rows on a temporary network failure. Clearing
+      // them made a slow request look exactly like production data was lost.
+      toast.error(
+        error instanceof Error && error.name === "AbortError"
+          ? "网络响应较慢，企业数据未更新，请稍后重试"
+          : "企业数据加载失败，已保留上次显示的数据",
+      );
     } finally {
       setLoading(false);
     }

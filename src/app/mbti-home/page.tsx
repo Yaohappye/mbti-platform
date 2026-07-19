@@ -163,6 +163,7 @@ function HomePageContent() {
     useState(false);
   const [enterpriseLoginAccount, setEnterpriseLoginAccount] = useState("");
   const [enterpriseLoginPassword, setEnterpriseLoginPassword] = useState("");
+  const [enterpriseLoginLoading, setEnterpriseLoginLoading] = useState(false);
   const [showEnterpriseLoginPassword, setShowEnterpriseLoginPassword] =
     useState(false);
   const [enterpriseName, setEnterpriseName] = useState("");
@@ -334,6 +335,8 @@ function HomePageContent() {
   };
 
   const handleEnterpriseLogin = async () => {
+    if (enterpriseLoginLoading) return;
+
     const account = enterpriseLoginAccount.trim();
     const password = enterpriseLoginPassword.trim();
 
@@ -341,6 +344,9 @@ function HomePageContent() {
       setEnterpriseMessage("请输入企业登录账号和密码");
       return;
     }
+
+    setEnterpriseLoginLoading(true);
+    setEnterpriseMessage("正在验证账号，请稍候...");
 
     try {
       const response = await fetch("/api/admin/auth/login", {
@@ -363,10 +369,12 @@ function HomePageContent() {
     } catch {
       setEnterpriseMessage("企业登录服务暂不可用，请稍后重试");
       return;
+    } finally {
+      setEnterpriseLoginLoading(false);
     }
 
     setEnterpriseMessage("企业登录成功，正在进入企业后台...");
-    window.location.href = "/admin/enterprise";
+    router.replace("/admin/enterprise");
   };
 
   const handleContinueLastTest = () => {
@@ -1211,9 +1219,10 @@ function HomePageContent() {
               <button
                 type="button"
                 onClick={handleEnterpriseLogin}
-                className="w-full rounded-2xl bg-black py-4 text-lg font-semibold text-white hover:bg-slate-900 transition"
+                disabled={enterpriseLoginLoading}
+                className="w-full rounded-2xl bg-black py-4 text-lg font-semibold text-white hover:bg-slate-900 transition disabled:cursor-wait disabled:opacity-60"
               >
-                登录
+                {enterpriseLoginLoading ? "正在登录..." : "登录"}
               </button>
             </div>
 

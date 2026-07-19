@@ -15,6 +15,11 @@ export interface AdminSession {
   expiresAt: string;
 }
 
+export type StoredAdminSession = Pick<
+  AdminSession,
+  "sessionId" | "adminType" | "adminId" | "enterpriseId" | "expiresAt"
+>;
+
 const SESSION_COOKIE = "admin_token";
 const SESSION_MAX_AGE_SECONDS = 60 * 60 * 24;
 
@@ -130,9 +135,9 @@ export function clearAdminSessionCookies(response: NextResponse) {
   }
 }
 
-export async function getAdminSession(
+async function getStoredAdminSession(
   request: NextRequest,
-): Promise<AdminSession | null> {
+): Promise<StoredAdminSession | null> {
   const token = request.cookies.get(SESSION_COOKIE)?.value?.trim();
   if (!token) return null;
 
@@ -152,11 +157,29 @@ export async function getAdminSession(
   if (!stored) return null;
 
   const adminType = stored.admin_type as AdminRole;
+
+  return {
+    sessionId: String(stored.id),
+    adminType,
+    adminId: String(stored.admin_id),
+    enterpriseId: stored.enterprise_id ? String(stored.enterprise_id) : null,
+    expiresAt: String(stored.expires_at),
+  };
+}
+
+export async function getAdminSession(
+  request: NextRequest,
+): Promise<AdminSession | null> {
+  const stored = await getStoredAdminSession(request);
+  if (!stored) return null;
+
+  const db = getDatabaseAdmin();
+  const adminType = stored.adminType;
   const table = adminType === "platform" ? "platform_admins" : "enterprise_admins";
   const { data: admin, error: adminError } = await db
     .from(table)
     .select("username,display_name,status")
-    .eq("id", stored.admin_id)
+    .eq("id", stored.adminId)
     .maybeSingle();
 
   if (adminError) {
@@ -165,13 +188,13 @@ export async function getAdminSession(
   if (!admin || admin.status !== "active") return null;
 
   return {
-    sessionId: String(stored.id),
+    sessionId: stored.sessionId,
     adminType,
-    adminId: String(stored.admin_id),
-    enterpriseId: stored.enterprise_id ? String(stored.enterprise_id) : null,
+    adminId: stored.adminId,
+    enterpriseId: stored.enterpriseId,
     username: String(admin.username),
     displayName: admin.display_name ? String(admin.display_name) : null,
-    expiresAt: String(stored.expires_at),
+    expiresAt: stored.expiresAt,
   };
 }
 
@@ -179,7 +202,10 @@ export async function requireAdminSession(
   request: NextRequest,
   allowed: AdminRole | AdminRole[],
 ) {
-  const session = await getAdminSession(request);
+  // Protected API routes only need the already-validated session identity.
+  // Account profile details are loaded only by /api/admin/auth/session. This
+  // removes one cross-region database request from every protected API call.
+  const session = await getStoredAdminSession(request);
   const allowedRoles = Array.isArray(allowed) ? allowed : [allowed];
 
   if (!session || !allowedRoles.includes(session.adminType)) {

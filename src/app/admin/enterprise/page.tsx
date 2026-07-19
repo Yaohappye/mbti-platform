@@ -59,15 +59,23 @@ export default function EnterpriseAdminPage() {
   const [loading, setLoading] = useState(true);
   const [showCustomerServiceQr, setShowCustomerServiceQr] = useState(false);
   useEffect(() => {
-    checkAuth();
     void loadEnterpriseProfile();
-    fetchResults();
   }, []);
+
+  useEffect(() => {
+    if (activeSection === "results") {
+      void fetchResults();
+    }
+  }, [activeSection]);
 
   const loadEnterpriseProfile = async () => {
     try {
       const response = await fetch("/api/admin/enterprise/profile");
       const result = await response.json();
+      if (response.status === 401) {
+        router.replace("/mbti-home?enterpriseLogin=1");
+        return;
+      }
       if (!response.ok || result.code !== 0) throw new Error(result.message);
       const data = result.data || {};
       const profile = {
@@ -84,17 +92,11 @@ export default function EnterpriseAdminPage() {
       }
     } catch (error) {
       console.error("读取企业资料失败:", error);
-    }
-  };
-
-  const checkAuth = async () => {
-    const response = await fetch("/api/admin/auth/session");
-    const result = await response.json().catch(() => ({}));
-    if (!response.ok || result.data?.adminType !== "enterprise") {
-      router.push("/");
+      toast.error("企业资料加载失败，请稍后重试");
     }
   };
 const fetchResults = async () => {
+    setLoading(true);
     try {
       let url = "/api/admin/enterprise/results?";
       if (keyword) url += `&keyword=${encodeURIComponent(keyword)}`;
