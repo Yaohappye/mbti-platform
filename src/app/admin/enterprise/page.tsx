@@ -59,6 +59,28 @@ export default function EnterpriseAdminPage() {
   const [loading, setLoading] = useState(true);
   const [showCustomerServiceQr, setShowCustomerServiceQr] = useState(false);
   useEffect(() => {
+    const cachedEnterpriseCode =
+      localStorage.getItem("enterprise_code") ||
+      localStorage.getItem("enterprise_login_code") ||
+      "";
+    const cachedEnterpriseName =
+      localStorage.getItem("enterprise_name") ||
+      localStorage.getItem("enterprise_login_name") ||
+      "";
+
+    // Prime the first screen from the successful login response. This lets the
+    // groups request start immediately while the complete profile loads.
+    if (cachedEnterpriseCode || cachedEnterpriseName) {
+      setEnterpriseProfile((current) => ({
+        ...current,
+        account: cachedEnterpriseCode || current.account,
+        enterpriseName: cachedEnterpriseName || current.enterpriseName,
+      }));
+      if (cachedEnterpriseName) {
+        setEnterpriseName(cachedEnterpriseName);
+      }
+    }
+
     void loadEnterpriseProfile();
   }, []);
 
@@ -120,6 +142,7 @@ const handleLogout = async () => {
     localStorage.removeItem("admin_username");
     localStorage.removeItem("admin_id");
     localStorage.removeItem("enterprise_id");
+    localStorage.removeItem("enterprise_code");
     localStorage.removeItem("enterprise_name");
     localStorage.removeItem("enterprise_login_code");
     localStorage.removeItem("enterprise_login_account");

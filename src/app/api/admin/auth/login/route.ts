@@ -16,6 +16,10 @@ export const runtime = "nodejs";
 interface AdminAccount {
   id: string;
   enterprise_id?: string | null;
+  enterprise?:
+    | { code: string; name: string; status: string }
+    | { code: string; name: string; status: string }[]
+    | null;
   username: string;
   password_hash: string;
   display_name: string | null;
@@ -23,6 +27,8 @@ interface AdminAccount {
 }
 
 export async function POST(request: NextRequest) {
+  const loginStartedAt = Date.now();
+
   try {
     const body = await request.json().catch(() => ({}));
     const username = String(body?.username || body?.account || "").trim();
@@ -39,6 +45,7 @@ export async function POST(request: NextRequest) {
     const db = getDatabaseAdmin();
     let account: AdminAccount | null = null;
     let readError: { message: string } | null = null;
+    const accountReadStartedAt = Date.now();
     if (role === "platform") {
       const { data, error } = await db
         .from("platform_admins")
@@ -50,12 +57,15 @@ export async function POST(request: NextRequest) {
     } else {
       const { data, error } = await db
         .from("enterprise_admins")
-        .select("id,enterprise_id,username,password_hash,display_name,status")
+        .select(
+          "id,enterprise_id,username,password_hash,display_name,status,enterprise:enterprises(code,name,status)",
+        )
         .eq("username", username)
         .maybeSingle();
-      account = data as AdminAccount | null;
+      account = data as unknown as AdminAccount | null;
       readError = error;
     }
+    const accountMs = Date.now() - accountReadStartedAt;
 
     if (readError) {
       throw new Error(`读取管理员账号失败: ${readError.message}`);
@@ -72,21 +82,22 @@ export async function POST(request: NextRequest) {
       role === "enterprise" && account.enterprise_id
         ? String(account.enterprise_id)
         : null;
-    let enterprise: { code: string; name: string } | null = null;
+    const joinedEnterprise = Array.isArray(account.enterprise)
+      ? account.enterprise[0] || null
+      : account.enterprise || null;
+    const enterprise = joinedEnterprise
+      ? {
+          code: String(joinedEnterprise.code),
+          name: String(joinedEnterprise.name),
+        }
+      : null;
 
-    const passwordCheck = compare(password, String(account.password_hash));
-    const enterpriseCheck = enterpriseId
-      ? db
-          .from("enterprises")
-          .select("code,name,status")
-          .eq("id", enterpriseId)
-          .maybeSingle()
-      : Promise.resolve({ data: null, error: null });
-
-    const [passwordMatches, enterpriseResult] = await Promise.all([
-      passwordCheck,
-      enterpriseCheck,
-    ]);
+    const passwordCheckStartedAt = Date.now();
+    const passwordMatches = await compare(
+      password,
+      String(account.password_hash),
+    );
+    const verifyMs = Date.now() - passwordCheckStartedAt;
 
     if (!passwordMatches) {
       return NextResponse.json(
@@ -96,22 +107,17 @@ export async function POST(request: NextRequest) {
     }
 
     if (enterpriseId) {
-      const { data, error: enterpriseError } = enterpriseResult;
-
-      if (enterpriseError) {
-        throw new Error(`读取企业失败: ${enterpriseError.message}`);
-      }
-      if (!data || data.status !== "active") {
+      if (!joinedEnterprise || joinedEnterprise.status !== "active") {
         return NextResponse.json(
           { code: 403, message: "企业账号当前不可用", data: null },
           { status: 403 },
         );
       }
-      enterprise = { code: String(data.code), name: String(data.name) };
     }
 
     const ipAddress = getRequestIp(request);
     const userAgent = getRequestUserAgent(request);
+    const sessionStartedAt = Date.now();
     const session = await createAdminSession({
       adminType: role,
       adminId: String(account.id),
@@ -119,6 +125,8 @@ export async function POST(request: NextRequest) {
       ipAddress,
       userAgent,
     });
+    const sessionMs = Date.now() - sessionStartedAt;
+    const criticalMs = Date.now() - loginStartedAt;
 
     const response = NextResponse.json({
       code: 0,
@@ -142,6 +150,25 @@ export async function POST(request: NextRequest) {
     });
 
     response.headers.set("Cache-Control", "no-store");
+    response.headers.set(
+      "Server-Timing",
+      [
+        `account;dur=${accountMs}`,
+        `verify;dur=${verifyMs}`,
+        `session;dur=${sessionMs}`,
+        `critical;dur=${criticalMs}`,
+      ].join(", "),
+    );
+
+    console.info("Admin login timing", {
+      role,
+      region:
+        process.env.VERCEL_REGION || process.env.AWS_REGION || "unknown",
+      accountMs,
+      verifyMs,
+      sessionMs,
+      criticalMs,
+    });
 
     // These writes are useful for auditing, but they are not required before
     // the browser can enter the admin area. Finish them after sending login.
