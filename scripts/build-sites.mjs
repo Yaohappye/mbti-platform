@@ -17,23 +17,34 @@ function patchOpenNextWindowsSymlinks() {
   if (process.platform !== "win32") return;
 
   const pnpmStore = resolve(projectRoot, "node_modules", ".pnpm");
-  const packageDirectory = readdirSync(pnpmStore).find((name) =>
-    name.startsWith("@opennextjs+aws@"),
-  );
-  if (!packageDirectory) {
+  const packageDirectory = existsSync(pnpmStore)
+    ? readdirSync(pnpmStore).find((name) =>
+        name.startsWith("@opennextjs+aws@"),
+      )
+    : undefined;
+  const helperPath = packageDirectory
+    ? resolve(
+        pnpmStore,
+        packageDirectory,
+        "node_modules",
+        "@opennextjs",
+        "aws",
+        "dist",
+        "build",
+        "copyTracedFiles.js",
+      )
+    : resolve(
+        projectRoot,
+        "node_modules",
+        "@opennextjs",
+        "aws",
+        "dist",
+        "build",
+        "copyTracedFiles.js",
+      );
+  if (!existsSync(helperPath)) {
     throw new Error("Unable to locate the OpenNext AWS build helper");
   }
-
-  const helperPath = resolve(
-    pnpmStore,
-    packageDirectory,
-    "node_modules",
-    "@opennextjs",
-    "aws",
-    "dist",
-    "build",
-    "copyTracedFiles.js",
-  );
   const source = readFileSync(helperPath, "utf8");
   if (source.includes('e.code === "EPERM" && process.platform === "win32"')) {
     return;
